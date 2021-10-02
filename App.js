@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+
+// components
+import Home from './screens/Home'
+import Login from './screens/Login'
+
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+        {isLoggedIn? <Home/>:<Login/>}
     </View>
   );
 }
